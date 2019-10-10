@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from "svelte";
-	import { fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 
 	let redirectUrl = '';
 	$: loaded = redirectUrl !== '' 
@@ -24,22 +24,18 @@
 	a {
 		text-decoration: none;
 		color: var(--yellow);
-		font-size: 3em;
-		padding: .5em 1em;
-		border: .05em solid var(--yellow);
 	}
 
 	img {
-		width: 1em;
+		width: 4em;
 		vertical-align: middle;
-		margin-left: .5em;
 	}
 </style>
 
 <main>
 	{#if loaded}
-		<a href="{redirectUrl}" transition:fly="{{delay: 500, duration: 1000}}">
-			enter <img src="/door.svg" alt="door">
+		<a href="{redirectUrl}" transition:fade="{{delay: 500, duration: 1000}}">
+			<img src="/door.svg" alt="door">
 		</a>
 	{/if}
 </main>
