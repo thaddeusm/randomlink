@@ -13,6 +13,15 @@
 </script>
 
 <style>
+	@keyframes pulse {
+		from {
+			transform: scale(1);
+		}
+		to {
+			transform: scale(1.2);
+		}
+	}
+
 	main {
 		display: grid;
 		height: 100%;
@@ -29,6 +38,12 @@
 	img {
 		width: 4em;
 		vertical-align: middle;
+		animation-name: pulse;
+		animation-delay: 1s;
+		animation-duration: 500ms;
+		animation-direction: alternate;
+		animation-iteration-count: 4;
+		transition: all ease-in;
 	}
 </style>
 
